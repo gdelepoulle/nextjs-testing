@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { BlogPost } from '../types/blog';
-import BlogCard from './BlogCard';
+import { useState } from "react";
+import { BlogPost } from "../types/blog";
+import BlogCard from "./BlogCard";
 
 interface FeaturedPostsProps {
   posts: BlogPost[];
@@ -12,10 +12,10 @@ interface FeaturedPostsProps {
 
 export default function FeaturedPosts({
   posts,
-  title = 'Featured Posts',
+  title = "Featured Posts",
   maxPosts = 6,
   onPostClick,
-  className = '',
+  className = "",
 }: FeaturedPostsProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const displayPosts = posts.slice(0, maxPosts);
@@ -44,7 +44,7 @@ export default function FeaturedPosts({
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
           {title}
         </h2>
-        
+
         {totalSlides > 1 && (
           <div className="flex items-center gap-2">
             <button
@@ -52,11 +52,21 @@ export default function FeaturedPosts({
               className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
               aria-label="Previous slide"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </button>
-            
+
             <div className="flex gap-1">
               {Array.from({ length: totalSlides }, (_, index) => (
                 <button
@@ -64,21 +74,31 @@ export default function FeaturedPosts({
                   onClick={() => setCurrentIndex(index)}
                   className={`w-2 h-2 rounded-full transition-colors ${
                     index === currentIndex
-                      ? 'bg-blue-600'
-                      : 'bg-gray-300 dark:bg-gray-600'
+                      ? "bg-blue-600"
+                      : "bg-gray-300 dark:bg-gray-600"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
-            
+
             <button
               onClick={nextSlide}
               className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
               aria-label="Next slide"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </button>
           </div>
@@ -90,7 +110,7 @@ export default function FeaturedPosts({
           <div
             key={post.id}
             onClick={() => onPostClick?.(post)}
-            className={onPostClick ? 'cursor-pointer' : ''}
+            className={onPostClick ? "cursor-pointer" : ""}
           >
             <BlogCard
               post={post}
@@ -113,4 +133,4 @@ export default function FeaturedPosts({
       )}
     </section>
   );
-} 
+}

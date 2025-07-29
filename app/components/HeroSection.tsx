@@ -1,12 +1,15 @@
-import { BlogPost } from '../types/blog';
-import BlogCard from './BlogCard';
+import { BlogPost } from "../types/blog";
+import BlogCard from "./BlogCard";
 
 interface HeroSectionProps {
   featuredPosts: BlogPost[];
   onPostClick?: (post: BlogPost) => void;
 }
 
-export default function HeroSection({ featuredPosts, onPostClick }: HeroSectionProps) {
+export default function HeroSection({
+  featuredPosts,
+  onPostClick,
+}: HeroSectionProps) {
   return (
     <section className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,8 +19,9 @@ export default function HeroSection({ featuredPosts, onPostClick }: HeroSectionP
             Welcome to Guillaume's likable stuff
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            A curated collection of things I've discovered, enjoyed, and think are worth sharing. 
-            From books and movies to tech tools and travel experiences.
+            A curated collection of things I've discovered, enjoyed, and think
+            are worth sharing. From books and movies to tech tools and travel
+            experiences.
           </p>
         </div>
 
@@ -32,7 +36,7 @@ export default function HeroSection({ featuredPosts, onPostClick }: HeroSectionP
                 <div
                   key={post.id}
                   onClick={() => onPostClick?.(post)}
-                  className={onPostClick ? 'cursor-pointer' : ''}
+                  className={onPostClick ? "cursor-pointer" : ""}
                 >
                   <BlogCard
                     post={post}
@@ -86,4 +90,4 @@ export default function HeroSection({ featuredPosts, onPostClick }: HeroSectionP
       </div>
     </section>
   );
-} 
+}

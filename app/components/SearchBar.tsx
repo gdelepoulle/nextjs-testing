@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -9,11 +9,11 @@ interface SearchBarProps {
 
 export default function SearchBar({
   onSearch,
-  placeholder = 'Search posts...',
-  className = '',
+  placeholder = "Search posts...",
+  className = "",
   debounceMs = 300,
 }: SearchBarProps) {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -49,7 +49,7 @@ export default function SearchBar({
       />
       {searchTerm && (
         <button
-          onClick={() => setSearchTerm('')}
+          onClick={() => setSearchTerm("")}
           className="absolute inset-y-0 right-0 pr-3 flex items-center"
         >
           <svg
@@ -69,4 +69,4 @@ export default function SearchBar({
       )}
     </div>
   );
-} 
+}

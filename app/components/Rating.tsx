@@ -1,10 +1,10 @@
-import { formatRating, getRatingColor } from '../utils/helpers';
+import { formatRating, getRatingColor } from "../utils/helpers";
 
 interface RatingProps {
   rating: number;
   maxRating?: number;
   showText?: boolean;
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
   interactive?: boolean;
   onRatingChange?: (rating: number) => void;
   className?: string;
@@ -14,15 +14,15 @@ export default function Rating({
   rating,
   maxRating = 5,
   showText = true,
-  size = 'md',
+  size = "md",
   interactive = false,
   onRatingChange,
-  className = '',
+  className = "",
 }: RatingProps) {
   const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-5 h-5',
-    lg: 'w-6 h-6',
+    sm: "w-4 h-4",
+    md: "w-5 h-5",
+    lg: "w-6 h-6",
   };
 
   const handleStarClick = (starRating: number) => {
@@ -37,7 +37,8 @@ export default function Rating({
         {Array.from({ length: maxRating }, (_, index) => {
           const starValue = index + 1;
           const isFilled = starValue <= rating;
-          const isHalfFilled = starValue === Math.ceil(rating) && rating % 1 !== 0;
+          const isHalfFilled =
+            starValue === Math.ceil(rating) && rating % 1 !== 0;
 
           return (
             <button
@@ -46,19 +47,19 @@ export default function Rating({
               onClick={() => handleStarClick(starValue)}
               disabled={!interactive}
               className={`
-                ${interactive ? 'cursor-pointer hover:scale-110' : 'cursor-default'}
+                ${interactive ? "cursor-pointer hover:scale-110" : "cursor-default"}
                 transition-transform duration-150
               `}
             >
               <svg
                 className={`${sizeClasses[size]} ${
                   isFilled
-                    ? 'text-yellow-400'
+                    ? "text-yellow-400"
                     : isHalfFilled
-                    ? 'text-yellow-400'
-                    : 'text-gray-300 dark:text-gray-600'
+                      ? "text-yellow-400"
+                      : "text-gray-300 dark:text-gray-600"
                 }`}
-                fill={isFilled ? 'currentColor' : 'none'}
+                fill={isFilled ? "currentColor" : "none"}
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -71,7 +72,7 @@ export default function Rating({
                   </defs>
                 ) : null}
                 <path
-                  fill={isHalfFilled ? `url(#half-star-${index})` : 'none'}
+                  fill={isHalfFilled ? `url(#half-star-${index})` : "none"}
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
@@ -82,7 +83,7 @@ export default function Rating({
           );
         })}
       </div>
-      
+
       {showText && (
         <span className={`text-sm font-medium ${getRatingColor(rating)}`}>
           {formatRating(rating)}
@@ -90,4 +91,4 @@ export default function Rating({
       )}
     </div>
   );
-} 
+}

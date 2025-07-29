@@ -31,11 +31,11 @@ export interface BlogFilters {
   tags?: string[];
   minRating?: number;
   searchQuery?: string;
-  sortBy?: 'date' | 'rating' | 'title';
-  sortOrder?: 'asc' | 'desc';
+  sortBy?: "date" | "rating" | "title";
+  sortOrder?: "asc" | "desc";
 }
 
 export interface FeaturedPost extends BlogPost {
   featured: boolean;
   featuredOrder: number;
-} 
+}

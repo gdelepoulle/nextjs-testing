@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -12,36 +12,35 @@ export default function Header() {
                 Cools stuff to look at
               </span>
             </Link>
-          </div>          
+          </div>
           <nav className="hidden md:flex space-x-8">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Home
             </Link>
-            <Link 
-              href="/blog" 
+            <Link
+              href="/blog"
               className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Blog
             </Link>
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               About
             </Link>
-            <Link 
-              href="/gallery" 
+            <Link
+              href="/gallery"
               className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Gallery
             </Link>
           </nav>
-
         </div>
       </div>
     </header>
   );
-} 
+}

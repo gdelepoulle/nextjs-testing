@@ -3,10 +3,10 @@
  */
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 }
 
@@ -18,9 +18,9 @@ export function formatRelativeDate(dateString: string): string {
   const now = new Date();
   const diffInMs = now.getTime() - date.getTime();
   const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-  
-  if (diffInDays === 0) return 'Today';
-  if (diffInDays === 1) return 'Yesterday';
+
+  if (diffInDays === 0) return "Today";
+  if (diffInDays === 1) return "Yesterday";
   if (diffInDays < 7) return `${diffInDays} days ago`;
   if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} weeks ago`;
   if (diffInDays < 365) return `${Math.floor(diffInDays / 30)} months ago`;
@@ -32,7 +32,7 @@ export function formatRelativeDate(dateString: string): string {
  */
 export function truncateText(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength).trim() + '...';
+  return text.slice(0, maxLength).trim() + "...";
 }
 
 /**
@@ -41,8 +41,8 @@ export function truncateText(text: string, maxLength: number): string {
 export function generateSlug(text: string): string {
   return text
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }
 
 /**
@@ -50,17 +50,17 @@ export function generateSlug(text: string): string {
  */
 export function capitalizeWords(text: string): string {
   return text
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(' ');
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
 }
 
 /**
  * Format rating to display stars
  */
 export function formatRating(rating: number): string {
-  const fullStars = '★'.repeat(Math.floor(rating));
-  const emptyStars = '☆'.repeat(5 - Math.floor(rating));
+  const fullStars = "★".repeat(Math.floor(rating));
+  const emptyStars = "☆".repeat(5 - Math.floor(rating));
   return fullStars + emptyStars;
 }
 
@@ -68,22 +68,22 @@ export function formatRating(rating: number): string {
  * Get color class based on rating
  */
 export function getRatingColor(rating: number): string {
-  if (rating >= 4.5) return 'text-green-600';
-  if (rating >= 4) return 'text-blue-600';
-  if (rating >= 3) return 'text-yellow-600';
-  if (rating >= 2) return 'text-orange-600';
-  return 'text-red-600';
+  if (rating >= 4.5) return "text-green-600";
+  if (rating >= 4) return "text-blue-600";
+  if (rating >= 3) return "text-yellow-600";
+  if (rating >= 2) return "text-orange-600";
+  return "text-red-600";
 }
 
 /**
  * Get background color class based on rating
  */
 export function getRatingBgColor(rating: number): string {
-  if (rating >= 4.5) return 'bg-green-100';
-  if (rating >= 4) return 'bg-blue-100';
-  if (rating >= 3) return 'bg-yellow-100';
-  if (rating >= 2) return 'bg-orange-100';
-  return 'bg-red-100';
+  if (rating >= 4.5) return "bg-green-100";
+  if (rating >= 4) return "bg-blue-100";
+  if (rating >= 3) return "bg-yellow-100";
+  if (rating >= 2) return "bg-orange-100";
+  return "bg-red-100";
 }
 
 /**
@@ -91,7 +91,7 @@ export function getRatingBgColor(rating: number): string {
  */
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
-  wait: number
+  wait: number,
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout;
   return (...args: Parameters<T>) => {
@@ -105,9 +105,9 @@ export function debounce<T extends (...args: any[]) => any>(
  */
 export function getInitials(name: string): string {
   return name
-    .split(' ')
-    .map(word => word.charAt(0))
-    .join('')
+    .split(" ")
+    .map((word) => word.charAt(0))
+    .join("")
     .toUpperCase()
     .slice(0, 2);
 }
@@ -130,9 +130,9 @@ export function isValidUrl(string: string): boolean {
 export function getDomainFromUrl(url: string): string {
   try {
     const domain = new URL(url).hostname;
-    return domain.replace('www.', '');
+    return domain.replace("www.", "");
   } catch {
-    return '';
+    return "";
   }
 }
 
@@ -140,11 +140,11 @@ export function getDomainFromUrl(url: string): string {
  * Format file size in human readable format
  */
 export function formatFileSize(bytes: number): string {
-  if (bytes === 0) return '0 Bytes';
+  if (bytes === 0) return "0 Bytes";
   const k = 1024;
-  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+  const sizes = ["Bytes", "KB", "MB", "GB"];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
 }
 
 /**
@@ -158,7 +158,7 @@ export function generateId(): string {
  * Check if device is mobile
  */
 export function isMobile(): boolean {
-  if (typeof window === 'undefined') return false;
+  if (typeof window === "undefined") return false;
   return window.innerWidth < 768;
 }
 
@@ -166,7 +166,7 @@ export function isMobile(): boolean {
  * Check if device is tablet
  */
 export function isTablet(): boolean {
-  if (typeof window === 'undefined') return false;
+  if (typeof window === "undefined") return false;
   return window.innerWidth >= 768 && window.innerWidth < 1024;
 }
 
@@ -174,7 +174,7 @@ export function isTablet(): boolean {
  * Check if device is desktop
  */
 export function isDesktop(): boolean {
-  if (typeof window === 'undefined') return false;
+  if (typeof window === "undefined") return false;
   return window.innerWidth >= 1024;
 }
 
@@ -182,10 +182,10 @@ export function isDesktop(): boolean {
  * Get viewport dimensions
  */
 export function getViewportDimensions(): { width: number; height: number } {
-  if (typeof window === 'undefined') return { width: 0, height: 0 };
+  if (typeof window === "undefined") return { width: 0, height: 0 };
   return {
     width: window.innerWidth,
-    height: window.innerHeight
+    height: window.innerHeight,
   };
 }
 
@@ -193,8 +193,8 @@ export function getViewportDimensions(): { width: number; height: number } {
  * Scroll to top of page
  */
 export function scrollToTop(): void {
-  if (typeof window === 'undefined') return;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (typeof window === "undefined") return;
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 /**
@@ -207,16 +207,16 @@ export async function copyToClipboard(text: string): Promise<boolean> {
       return true;
     } else {
       // Fallback for older browsers
-      const textArea = document.createElement('textarea');
+      const textArea = document.createElement("textarea");
       textArea.value = text;
       document.body.appendChild(textArea);
       textArea.select();
-      document.execCommand('copy');
+      document.execCommand("copy");
       document.body.removeChild(textArea);
       return true;
     }
   } catch (error) {
-    console.error('Failed to copy text:', error);
+    console.error("Failed to copy text:", error);
     return false;
   }
-} 
+}

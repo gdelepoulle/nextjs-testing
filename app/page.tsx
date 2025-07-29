@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState, useMemo } from 'react';
-import { getAllPosts, getAllCategories, getFeaturedPosts } from './utils/data';
-import { BlogPost, Category } from './types/blog';
-import HeroSection from './components/HeroSection';
-import BlogGrid from './components/BlogGrid';
-import CategoryFilter from './components/CategoryFilter';
-import SearchBar from './components/SearchBar';
-import FeaturedPosts from './components/FeaturedPosts';
+import { useState, useMemo } from "react";
+import { getAllPosts, getAllCategories, getFeaturedPosts } from "./utils/data";
+import { BlogPost, Category } from "./types/blog";
+import HeroSection from "./components/HeroSection";
+import BlogGrid from "./components/BlogGrid";
+import CategoryFilter from "./components/CategoryFilter";
+import SearchBar from "./components/SearchBar";
+import FeaturedPosts from "./components/FeaturedPosts";
 
 export default function BlogPage() {
   const allPosts = getAllPosts();
@@ -16,7 +16,7 @@ export default function BlogPage() {
 
   // State for filters
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // Filter posts based on current filters
@@ -25,23 +25,24 @@ export default function BlogPage() {
 
     // Filter by category
     if (selectedCategory) {
-      filtered = filtered.filter(post => post.category === selectedCategory);
+      filtered = filtered.filter((post) => post.category === selectedCategory);
     }
 
     // Filter by search query
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(post =>
-        post.title.toLowerCase().includes(query) ||
-        post.description.toLowerCase().includes(query) ||
-        post.tags.some(tag => tag.toLowerCase().includes(query))
+      filtered = filtered.filter(
+        (post) =>
+          post.title.toLowerCase().includes(query) ||
+          post.description.toLowerCase().includes(query) ||
+          post.tags.some((tag) => tag.toLowerCase().includes(query)),
       );
     }
 
     // Filter by selected tags
     if (selectedTags.length > 0) {
-      filtered = filtered.filter(post =>
-        selectedTags.some(tag => post.tags.includes(tag))
+      filtered = filtered.filter((post) =>
+        selectedTags.some((tag) => post.tags.includes(tag)),
       );
     }
 
@@ -51,29 +52,27 @@ export default function BlogPage() {
   // Get all unique tags from posts
   const allTags = useMemo(() => {
     const tagSet = new Set<string>();
-    allPosts.forEach(post => {
-      post.tags.forEach(tag => tagSet.add(tag));
+    allPosts.forEach((post) => {
+      post.tags.forEach((tag) => tagSet.add(tag));
     });
     return Array.from(tagSet).sort();
   }, [allPosts]);
 
   const handleTagClick = (tag: string) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
 
   const handlePostClick = (post: BlogPost) => {
     // For now, just log the post. In a real app, this would navigate to a detail page
-    console.log('Post clicked:', post);
+    console.log("Post clicked:", post);
   };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Section */}
-      <HeroSection 
+      <HeroSection
         featuredPosts={featuredPosts}
         onPostClick={handlePostClick}
       />
@@ -103,7 +102,7 @@ export default function BlogPage() {
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 Selected tags:
               </span>
-              {selectedTags.map(tag => (
+              {selectedTags.map((tag) => (
                 <button
                   key={tag}
                   onClick={() => handleTagClick(tag)}
@@ -126,10 +125,9 @@ export default function BlogPage() {
         <div className="mb-6">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              {selectedCategory 
-                ? `${categories.find(c => c.id === selectedCategory)?.name} Posts`
-                : 'All Posts'
-              }
+              {selectedCategory
+                ? `${categories.find((c) => c.id === selectedCategory)?.name} Posts`
+                : "All Posts"}
             </h2>
             <span className="text-sm text-gray-600 dark:text-gray-400">
               {filteredPosts.length} of {allPosts.length} posts
@@ -155,15 +153,16 @@ export default function BlogPage() {
               Popular Tags
             </h3>
             <div className="flex flex-wrap gap-2">
-              {allTags.slice(0, 20).map(tag => (
+              {allTags.slice(0, 20).map((tag) => (
                 <button
                   key={tag}
                   onClick={() => handleTagClick(tag)}
                   className={`
                     px-3 py-1 text-sm rounded-full transition-colors
-                    ${selectedTags.includes(tag)
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                    ${
+                      selectedTags.includes(tag)
+                        ? "bg-blue-600 text-white"
+                        : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
                     }
                   `}
                 >
@@ -178,8 +177,18 @@ export default function BlogPage() {
         {filteredPosts.length === 0 && (
           <div className="text-center py-12">
             <div className="text-gray-400 dark:text-gray-500 mb-4">
-              <svg className="mx-auto h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33" />
+              <svg
+                className="mx-auto h-12 w-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33"
+                />
               </svg>
             </div>
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
@@ -191,7 +200,7 @@ export default function BlogPage() {
             <button
               onClick={() => {
                 setSelectedCategory(null);
-                setSearchQuery('');
+                setSearchQuery("");
                 setSelectedTags([]);
               }}
               className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
@@ -203,4 +212,4 @@ export default function BlogPage() {
       </div>
     </div>
   );
-} 
+}

@@ -1,9 +1,9 @@
-import { BlogPost } from '../types/blog';
-import BlogCard from './BlogCard';
+import { BlogPost } from "../types/blog";
+import BlogCard from "./BlogCard";
 
 interface BlogGridProps {
   posts: BlogPost[];
-  variant?: 'default' | 'compact' | 'featured';
+  variant?: "default" | "compact" | "featured";
   columns?: 1 | 2 | 3 | 4;
   showCategory?: boolean;
   showTags?: boolean;
@@ -14,19 +14,19 @@ interface BlogGridProps {
 
 export default function BlogGrid({
   posts,
-  variant = 'default',
+  variant = "default",
   columns = 3,
   showCategory = true,
   showTags = true,
   showRating = true,
   showDate = true,
-  className = '',
+  className = "",
 }: BlogGridProps) {
   const gridCols = {
-    1: 'grid-cols-1',
-    2: 'grid-cols-1 md:grid-cols-2',
-    3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-    4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
+    1: "grid-cols-1",
+    2: "grid-cols-1 md:grid-cols-2",
+    3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+    4: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
   };
 
   if (posts.length === 0) {
@@ -52,4 +52,4 @@ export default function BlogGrid({
       ))}
     </div>
   );
-} 
+}

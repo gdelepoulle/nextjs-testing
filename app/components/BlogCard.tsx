@@ -1,9 +1,9 @@
-import { BlogPost } from '../types/blog';
-import { formatDate, formatRating, getRatingColor } from '../utils/helpers';
+import { BlogPost } from "../types/blog";
+import { formatDate, formatRating, getRatingColor } from "../utils/helpers";
 
 interface BlogCardProps {
   post: BlogPost;
-  variant?: 'default' | 'compact' | 'featured';
+  variant?: "default" | "compact" | "featured";
   showCategory?: boolean;
   showTags?: boolean;
   showRating?: boolean;
@@ -12,21 +12,23 @@ interface BlogCardProps {
 
 export default function BlogCard({
   post,
-  variant = 'default',
+  variant = "default",
   showCategory = true,
   showTags = true,
   showRating = true,
   showDate = true,
 }: BlogCardProps) {
-  const isCompact = variant === 'compact';
-  const isFeatured = variant === 'featured';
+  const isCompact = variant === "compact";
+  const isFeatured = variant === "featured";
 
   return (
-    <div className={`
+    <div
+      className={`
       bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden
-      ${isFeatured ? 'border-2 border-blue-500' : ''}
-      ${isCompact ? 'p-4' : 'p-6'}
-    `}>
+      ${isFeatured ? "border-2 border-blue-500" : ""}
+      ${isCompact ? "p-4" : "p-6"}
+    `}
+    >
       {/* Image */}
       {post.imageUrl && !isCompact && (
         <div className="aspect-video bg-gray-200 dark:bg-gray-700 mb-4">
@@ -55,18 +57,22 @@ export default function BlogCard({
           </span>
         )}
         {showRating && (
-          <span className={`text-sm font-medium ${getRatingColor(post.rating)}`}>
+          <span
+            className={`text-sm font-medium ${getRatingColor(post.rating)}`}
+          >
             {formatRating(post.rating)}
           </span>
         )}
       </div>
 
       {/* Title */}
-      <h3 className={`
+      <h3
+        className={`
         font-semibold text-gray-900 dark:text-white mb-2
-        ${isCompact ? 'text-base' : 'text-lg'}
-        ${isFeatured ? 'text-xl' : ''}
-      `}>
+        ${isCompact ? "text-base" : "text-lg"}
+        ${isFeatured ? "text-xl" : ""}
+      `}
+      >
         {post.title}
       </h3>
 
@@ -116,4 +122,4 @@ export default function BlogCard({
       )}
     </div>
   );
-} 
+}
