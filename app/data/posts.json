@@ -47,7 +47,6 @@
     "tags": ["progressive-rock", "concept-album", "classic", "pink-floyd"],
     "date": "2024-01-05",
     "rating": 5,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://en.wikipedia.org/wiki/The_Dark_Side_of_the_Moon",
     "personalThoughts": "Listening to this on vinyl with good headphones is a transcendent experience."
   },
@@ -60,7 +59,6 @@
     "tags": ["renaissance", "leonardo-da-vinci", "louvre", "masterpiece"],
     "date": "2024-01-03",
     "rating": 5,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://www.louvre.fr/en/explore/the-palace/the-mona-lisa",
     "personalThoughts": "Seeing it in person was overwhelming. The painting is smaller than expected but radiates presence."
   },
@@ -73,7 +71,6 @@
     "tags": ["sushi", "omakase", "fine-dining", "new-york"],
     "date": "2024-01-01",
     "rating": 5,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://sushinakazawa.com",
     "personalThoughts": "The most expensive meal I've ever had, but worth every penny. The uni was life-changing."
   },
@@ -86,7 +83,6 @@
     "tags": ["japan", "kyoto", "temples", "culture", "photography"],
     "date": "2023-12-28",
     "rating": 5,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://kyoto.travel",
     "personalThoughts": "Getting lost in the backstreets of Kyoto led to some of the most beautiful moments of my trip."
   },
@@ -99,7 +95,6 @@
     "tags": ["self-help", "productivity", "psychology", "habits"],
     "date": "2023-12-25",
     "rating": 4,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://jamesclear.com/atomic-habits",
     "personalThoughts": "The 1% improvement concept really resonated with me. I've implemented several strategies from this book."
   },
@@ -112,7 +107,6 @@
     "tags": ["thriller", "dystopian", "apple-tv", "psychological"],
     "date": "2023-12-20",
     "rating": 4,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://tv.apple.com/us/show/severance/umc.cmc.1srk2goyh2q2zdxcx605w8vtx",
     "personalThoughts": "The office design is so unsettlingly perfect. Can't wait for season 2."
   },
@@ -125,7 +119,6 @@
     "tags": ["productivity", "note-taking", "collaboration", "database"],
     "date": "2023-12-18",
     "rating": 4,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://notion.so",
     "personalThoughts": "I use this for everything - personal notes, work projects, and even my reading list."
   },
@@ -138,7 +131,6 @@
     "tags": ["indie-folk", "taylor-swift", "quarantine", "storytelling"],
     "date": "2023-12-15",
     "rating": 4,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://en.wikipedia.org/wiki/Folklore_(Taylor_Swift_album)",
     "personalThoughts": "The storytelling in 'The Last Great American Dynasty' is masterful. This album got me through 2020."
   },
@@ -151,7 +143,6 @@
     "tags": ["street-art", "banksy", "social-commentary", "exhibition"],
     "date": "2023-12-12",
     "rating": 4,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://banksyexhibit.com",
     "personalThoughts": "The political messages are as relevant as ever. The immersive elements really bring the art to life."
   },
@@ -164,7 +155,6 @@
     "tags": ["ramen", "tokyo", "japanese-cuisine", "food-travel"],
     "date": "2023-12-10",
     "rating": 4,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://tokyocheapo.com/food-and-drink/best-ramen-tokyo/",
     "personalThoughts": "Ichiran's solo dining booths are genius. The broth at Nakiryu was worth the 2-hour wait."
   },
@@ -177,7 +167,6 @@
     "tags": ["iceland", "road-trip", "nature", "photography", "adventure"],
     "date": "2023-12-08",
     "rating": 5,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://www.iceland.is",
     "personalThoughts": "Driving through a snowstorm in the highlands was terrifying but the northern lights made it all worth it."
   },
@@ -190,7 +179,6 @@
     "tags": ["meditation", "mindfulness", "apps", "wellness", "beginners"],
     "date": "2023-12-05",
     "rating": 3,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://www.headspace.com",
     "personalThoughts": "Started with Headspace but switched to Waking Up for the more philosophical approach."
   },
@@ -203,7 +191,6 @@
     "tags": ["coffee", "pour-over", "brewing", "technique", "home"],
     "date": "2023-12-01",
     "rating": 3,
-    "imageUrl": "/api/placeholder/400/300",
     "source": "https://www.stumptowncoffee.com/brew-guides",
     "personalThoughts": "The ritual of making pour-over coffee has become my favorite part of the morning."
   }

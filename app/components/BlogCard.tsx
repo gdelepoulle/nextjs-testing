@@ -37,6 +37,15 @@ export default function BlogCard({
           />
         </div>
       )}
+      {!post.imageUrl && !isCompact && (
+        <div className="aspect-video bg-gray-200 dark:bg-gray-700 mb-4">
+          <img
+            src="/image-not-found.svg"
+            alt={post.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
 
       {/* Header */}
       <div className="flex items-center justify-between mb-2">
