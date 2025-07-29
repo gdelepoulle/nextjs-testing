@@ -1,0 +1,58 @@
+[
+  {
+    "id": "books",
+    "name": "Books",
+    "description": "Book reviews and recommendations",
+    "color": "bg-blue-500",
+    "icon": "📚"
+  },
+  {
+    "id": "movies",
+    "name": "Movies & TV",
+    "description": "Film and series reviews",
+    "color": "bg-purple-500",
+    "icon": "🎬"
+  },
+  {
+    "id": "tech",
+    "name": "Tech",
+    "description": "Software, tools, and tech discoveries",
+    "color": "bg-green-500",
+    "icon": "💻"
+  },
+  {
+    "id": "music",
+    "name": "Music",
+    "description": "Album and song recommendations",
+    "color": "bg-pink-500",
+    "icon": "🎵"
+  },
+  {
+    "id": "art",
+    "name": "Art & Design",
+    "description": "Creative work and inspiration",
+    "color": "bg-yellow-500",
+    "icon": "🎨"
+  },
+  {
+    "id": "food",
+    "name": "Food",
+    "description": "Restaurant reviews and recipes",
+    "color": "bg-red-500",
+    "icon": "🍽️"
+  },
+  {
+    "id": "travel",
+    "name": "Travel",
+    "description": "Places and experiences",
+    "color": "bg-indigo-500",
+    "icon": "✈️"
+  },
+  {
+    "id": "misc",
+    "name": "Miscellaneous",
+    "description": "Other interesting finds",
+    "color": "bg-gray-500",
+    "icon": "🔍"
+  }
+] 
