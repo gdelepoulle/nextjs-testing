@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation";
 import { BlogPost } from "../types/blog";
 import { formatDate, formatRating, getRatingColor } from "../utils/helpers";
 
@@ -21,6 +23,12 @@ export default function BlogCard({
   const isCompact = variant === "compact";
   const isFeatured = variant === "featured";
 
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/article/${post.id}`);
+  };
+
   return (
     <div
       className={`
@@ -28,6 +36,7 @@ export default function BlogCard({
       ${isFeatured ? "border-2 border-blue-500" : ""}
       ${isCompact ? "p-4" : "p-6"}
     `}
+    onClick={handleClick}
     >
       {/* Image */}
       {post.imageUrl && !isCompact && (

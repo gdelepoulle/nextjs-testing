@@ -60,7 +60,7 @@ export function capitalizeWords(text: string): string {
  */
 export function formatRating(rating: number): string {
   const fullStars = "★".repeat(Math.floor(rating));
-  const emptyStars = "☆".repeat(5 - Math.floor(rating));
+  const emptyStars = "☆".repeat(10 - Math.floor(rating));
   return fullStars + emptyStars;
 }
 
@@ -68,10 +68,10 @@ export function formatRating(rating: number): string {
  * Get color class based on rating
  */
 export function getRatingColor(rating: number): string {
-  if (rating >= 4.5) return "text-green-600";
-  if (rating >= 4) return "text-blue-600";
-  if (rating >= 3) return "text-yellow-600";
-  if (rating >= 2) return "text-orange-600";
+  if (rating >= 9) return "text-green-600";
+  if (rating >= 7) return "text-blue-600";
+  if (rating >= 5) return "text-yellow-600";
+  if (rating >= 3) return "text-orange-600";
   return "text-red-600";
 }
 
@@ -79,10 +79,10 @@ export function getRatingColor(rating: number): string {
  * Get background color class based on rating
  */
 export function getRatingBgColor(rating: number): string {
-  if (rating >= 4.5) return "bg-green-100";
-  if (rating >= 4) return "bg-blue-100";
-  if (rating >= 3) return "bg-yellow-100";
-  if (rating >= 2) return "bg-orange-100";
+  if (rating >= 9) return "bg-green-100";
+  if (rating >= 7) return "bg-blue-100";
+  if (rating >= 5) return "bg-yellow-100";
+  if (rating >= 3) return "bg-orange-100";
   return "bg-red-100";
 }
 

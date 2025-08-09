@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FooterClient } from "./FooterClient";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
@@ -14,13 +15,13 @@ export default function Footer() {
                 alt="Next.js Logo"
                 width={80}
                 height={20}
-                className="dark:invert"
+                className="dark:invert transition-all duration-200"
               />
-              <span className="text-lg font-bold text-gray-900 dark:text-white">
+              <span className="text-lg font-bold text-gray-900 dark:text-white transition-colors duration-200">
                 My App
               </span>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 text-sm max-w-md">
+            <p className="text-gray-600 dark:text-gray-400 text-sm max-w-md transition-colors duration-200">
               A modern web application built with Next.js, featuring a clean
               design and excellent user experience.
             </p>
@@ -28,14 +29,14 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4 transition-colors duration-200">
               Quick Links
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
                 >
                   Home
                 </Link>
@@ -43,7 +44,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
                 >
                   About
                 </Link>
@@ -51,7 +52,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
                 >
                   Contact
                 </Link>
@@ -61,7 +62,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4 transition-colors duration-200">
               Resources
             </h3>
             <ul className="space-y-2">
@@ -70,7 +71,7 @@ export default function Footer() {
                   href="https://nextjs.org/docs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
                 >
                   Documentation
                 </a>
@@ -80,7 +81,7 @@ export default function Footer() {
                   href="https://github.com/vercel/next.js"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
                 >
                   GitHub
                 </a>
@@ -90,7 +91,7 @@ export default function Footer() {
                   href="https://vercel.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
                 >
                   Deploy on Vercel
                 </a>
@@ -102,13 +103,13 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 dark:text-gray-400 text-sm">
+            <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
               © 2024 My App. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a
                 href="#"
-                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors"
+                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-200"
               >
                 <span className="sr-only">Twitter</span>
                 <svg
@@ -121,7 +122,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors"
+                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-200"
               >
                 <span className="sr-only">GitHub</span>
                 <svg
