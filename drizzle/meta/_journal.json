@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1754773397451,
+      "tag": "0000_deep_synch",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1754776238693,
+      "tag": "0001_outstanding_madame_hydra",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1754776917088,
+      "tag": "0002_worthless_captain_america",
+      "breakpoints": true
+    }
+  ]
+}
